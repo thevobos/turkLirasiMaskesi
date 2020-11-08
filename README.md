@@ -3,12 +3,10 @@ jQuery TürkLirası İnput Maskesi
 
 jQuery eklentisi olarak hazırlanan basit bir Türk Lirası giriş maskesi.
 
-## Bu proje aktif bir şekilde geliştirilmiyor. Lütfen production ortamında kullanmayın. 
-
 ***
 ### Download
 
-Son versiyon(minified) için [tıklayınız](https://raw.githubusercontent.com/ozziest/turkLirasiMaskesi/master/dist/jquery.turkLirasi.min.js).
+Son versiyon(minified) için [tıklayınız](https://raw.githubusercontent.com/thevobos/turkLirasiMaskesi/master/dist/jquery.turkLirasi.min.js).
 
 ***
 ### Kullanımı
@@ -34,6 +32,7 @@ Opsiyonel olarak yapılabilecek ayarlar şu şekildedir;
 
 
  * `allowedDecimal`: Ondalıklı sayı girişine izin verileceğini belirtir. Varsayılan: true
+  * `convertFloat`: Float birime çevirmeize izimn verir.. Varsayılan: flase
  * `maxDecimalCount`: Ondalıklı bölüme girilebilecek en fazla sayı adedidir. Varsayılan: 2
  * `autoFillDecimal`: Ondalıklı bölüm girilmediğinde otomatik olarak doldurulması ayarıdır. Varsayılan: true
  * `suffix`: Input sonuna eklenecek olan metini belirten değerdir. Varsayılan: TL
