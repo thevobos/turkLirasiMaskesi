@@ -5,11 +5,12 @@ $.fn.turkLirasi = function (options) {
     var settings = $.extend({
                             allowedDecimal: true,
                             maxDecimalCount: 2,
+                            convertFloat:false,
                             autoFillDecimal: true,
                             suffix: 'TL',
                             formatted: true,
                             autoSelect: true,
-                            align: 'right',
+                            align: 'left',
                             _eventAfterSet: false,
                             _eventFocusOut: false,
                             debug: false
@@ -70,6 +71,19 @@ $.fn.turkLirasi = function (options) {
             return '';
         }
         return ' ' + suffix;
+    };
+    
+     /**
+    * Get Float
+    *
+    * Float değere çevirir.
+    */
+    var getFloat = function(suffix)
+    {
+        if (options.convertFloat == true) {
+            return suffix.replace(".","").replace(",",".");
+        }
+        return suffix;
     };
 
     /**
@@ -156,7 +170,7 @@ $.fn.turkLirasi = function (options) {
         }
         element.data('visualValue', visualValue);
         // Görünen değer yazılır.
-        element.val(element.data('visualValue') + getSuffix(element.data('options').suffix));   
+        element.val(getFloat(element.data('visualValue')) + getSuffix(element.data('options').suffix));   
         log(element, element.data());
         // Herhangi bir set sonrası parametre set edilmiş mi kontrol edilir.
         if (typeof initialization == 'undefined' && methodDefined(element, '_eventAfterSet')) {
